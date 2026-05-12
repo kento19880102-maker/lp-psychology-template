@@ -66,15 +66,15 @@ export const site: SiteContent = {
     href: "#contact",
   },
   psychology: {
-    scarcityBanner: { enabled: true, text: "今月限定: 初回診断レポートを無料で進呈" },
+    scarcityBanner: { enabled: false, text: "今月限定: 初回診断レポートを無料で進呈" },
     socialProofStats: [
-      { label: "導入企業", value: "120社" },
-      { label: "満足度", value: "98%" },
-      { label: "改善実績", value: "10年" },
+      { value: "チャット完結", label: "テキストのみで対応" },
+      { value: "事前リサーチ付", label: "課題仮説を無料お渡し" },
+      { value: "7日納品", label: "LP制作の標準納期" },
     ],
-    lossAversion: { enabled: true, text: "今始めないと、競合との差は静かに広がっていきます。" },
-    priceAnchoring: { enabled: true },
-    limitedOffer: { enabled: true, text: "5月限定価格 / 先着8名様まで" },
+    lossAversion: { enabled: false, text: "今始めないと、競合との差は静かに広がっていきます。" },
+    priceAnchoring: { enabled: false },
+    limitedOffer: { enabled: false, text: "5月限定価格 / 先着8名様まで" },
   },
   hero: {
     title: "問い合わせが自然に増える、伝わるWeb導線を。",
@@ -127,7 +127,7 @@ export const site: SiteContent = {
     lead: "最初に高品質な全体像を提示し、必要な範囲に合わせて無理なく選べます。",
     plans: [
       { name: "松 プレミアム", note: "戦略設計まで任せたい方向け", regularPrice: "198,000円", currentPrice: "98,000円", features: ["競合整理", "コピー設計", "改善レポート", "公開後30日サポート"] },
-      { name: "竹 スタンダード", note: "一番選ばれている推奨プラン", regularPrice: "128,000円", currentPrice: "39,800円", recommended: true, badge: "人気No.1", features: ["LP制作1ページ", "AIヒーロー動画枠", "フォーム設置", "スマホ最適化"] },
+      { name: "竹 スタンダード", note: "一番選ばれている推奨プラン", regularPrice: "128,000円", currentPrice: "39,800円", recommended: true, badge: "おすすめ", features: ["LP制作1ページ", "AIヒーロー動画枠", "フォーム設置", "スマホ最適化"] },
       { name: "梅 ライト", note: "まずLPを整えたい方向け", regularPrice: "79,800円", currentPrice: "19,800円", features: ["LP制作1ページ", "基本コピー反映", "問い合わせ導線", "軽微修正1回"] },
     ],
   },
