@@ -12,6 +12,7 @@ export function LogoWall() {
             </div>
           ))}
         </div>
+        {site.logos.note && <p className="mt-5 text-xs text-[var(--color-muted)]">{site.logos.note}</p>}
       </div>
     </section>
   );

@@ -38,7 +38,7 @@ export interface SiteContent {
   features: { eyebrow: string; title: string; lead: string; items: { icon: string; title: string; text: string }[] };
   beforeAfter: { eyebrow: string; title: string; before: string[]; after: string[] };
   testimonials: { eyebrow: string; title: string; items: Testimonial[] };
-  logos: { title: string; items: string[] };
+  logos: { title: string; note?: string; items: string[] };
   pricing: { eyebrow: string; title: string; lead: string; plans: Plan[] };
   faq: { eyebrow: string; title: string; items: { question: string; answer: string }[] };
   form: { eyebrow: string; title: string; lead: string; action: string };
@@ -46,10 +46,10 @@ export interface SiteContent {
 }
 
 export const site: SiteContent = {
-  company: "Atelier Verde",
+  company: "Studio Verena",
   meta: {
-    title: "Atelier Verde | 成果につながるWebコンサルティング",
-    description: "小さな改善を積み重ね、問い合わせにつながる導線を設計するWebコンサルティング会社です。",
+    title: "Studio Verena | 成果につながるWebコンサルティング",
+    description: "Studio Verenaは、小さな改善を積み重ね、問い合わせにつながる導線を設計するWebコンサルティング会社です。",
     ogImage: "/og-image.png",
     url: "https://example.com",
   },
@@ -66,19 +66,19 @@ export const site: SiteContent = {
     href: "#contact",
   },
   psychology: {
-    scarcityBanner: { enabled: false, text: "今月限定: 初回診断レポートを無料で進呈" },
+    scarcityBanner: { enabled: false, text: "ご新規様歓迎: 初回診断レポートをご用意しています" },
     socialProofStats: [
       { value: "チャット完結", label: "テキストのみで対応" },
-      { value: "事前リサーチ付", label: "課題仮説を無料お渡し" },
+      { value: "リサーチ付", label: "課題仮説を無料お渡し" },
       { value: "7日納品", label: "LP制作の標準納期" },
     ],
     lossAversion: { enabled: false, text: "今始めないと、競合との差は静かに広がっていきます。" },
     priceAnchoring: { enabled: false },
-    limitedOffer: { enabled: false, text: "5月限定価格 / 先着8名様まで" },
+    limitedOffer: { enabled: false, text: "ご新規様歓迎 / 初回相談をご用意しています" },
   },
   hero: {
     title: "問い合わせが自然に増える、伝わるWeb導線を。",
-    lead: "Atelier Verdeは、見た目の美しさとCV設計を両立する架空のWebコンサルティング会社です。",
+    lead: "Studio Verenaは、見た目の美しさとCV設計を両立する架空のWebコンサルティング会社です。",
     videoSrc: "/hero-video.mp4",
     secondaryCta: "料金を見る",
   },
@@ -119,6 +119,7 @@ export const site: SiteContent = {
   },
   logos: {
     title: "成長を目指す企業が導入",
+    note: "※架空企業のサンプル表示です",
     items: ["Luma Works", "Green Nest", "Mori Studio", "North Link", "Kissa Lab", "Aoba Care"],
   },
   pricing: {
@@ -126,9 +127,9 @@ export const site: SiteContent = {
     title: "目的に合わせて選べる3プラン",
     lead: "最初に高品質な全体像を提示し、必要な範囲に合わせて無理なく選べます。",
     plans: [
-      { name: "松 プレミアム", note: "戦略設計まで任せたい方向け", regularPrice: "198,000円", currentPrice: "98,000円", features: ["競合整理", "コピー設計", "改善レポート", "公開後30日サポート"] },
-      { name: "竹 スタンダード", note: "一番選ばれている推奨プラン", regularPrice: "128,000円", currentPrice: "39,800円", recommended: true, badge: "おすすめ", features: ["LP制作1ページ", "AIヒーロー動画枠", "フォーム設置", "スマホ最適化"] },
-      { name: "梅 ライト", note: "まずLPを整えたい方向け", regularPrice: "79,800円", currentPrice: "19,800円", features: ["LP制作1ページ", "基本コピー反映", "問い合わせ導線", "軽微修正1回"] },
+      { name: "プレミアム", note: "戦略設計まで任せたい方向け", regularPrice: "198,000円", currentPrice: "98,000円", features: ["競合整理", "コピー設計", "改善レポート", "公開後30日サポート"] },
+      { name: "スタンダード", note: "主要プラン", regularPrice: "128,000円", currentPrice: "39,800円", recommended: true, badge: "おすすめ", features: ["LP制作1ページ", "AIヒーロー動画枠", "フォーム設置", "スマホ最適化"] },
+      { name: "ライト", note: "まずLPを整えたい方向け", regularPrice: "79,800円", currentPrice: "19,800円", features: ["LP制作1ページ", "基本コピー反映", "問い合わせ導線", "軽微修正1回"] },
     ],
   },
   faq: {
@@ -138,9 +139,8 @@ export const site: SiteContent = {
       { question: "業種が違っても使えますか？", answer: "はい。テキストと画像を差し替えるだけで、士業、美容、教育、店舗、BtoBまで展開できます。" },
       { question: "動画がなくても公開できますか？", answer: "できます。ヒーローにはグラデーション背景のフォールバックがあり、動画なしでも見栄えを保てます。" },
       { question: "フォームの送信先は変えられますか？", answer: "FormspreeのURLをaction属性に設定するだけで切り替えできます。" },
-      { question: "色の変更は難しいですか？", answer: "globals.cssのCSS変数を書き換えるだけで、アクセントカラーを変更できます。" },
-      { question: "Vercelに公開できますか？", answer: "Next.js標準構成のため、GitHub連携後にVercelから簡単にデプロイできます。" },
-      { question: "心理学要素は外せますか？", answer: "site.tsのフラグで、希少性や損失回避などの表示を切り替えられます。" },
+      { question: "色の変更は難しいですか？", answer: "設定ファイルの色指定を変えるだけで、アクセントカラーを変更できます。" },
+      { question: "Vercelに公開できますか？", answer: "標準的な構成のため、GitHub連携後にVercelから簡単にデプロイできます。" },
     ],
   },
   form: {

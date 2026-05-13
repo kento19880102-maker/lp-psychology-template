@@ -12,20 +12,20 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contact" className="section">
-      <div className="container grid gap-10 md:grid-cols-[.9fr_1.1fr]">
-        <div className="reveal">
+    <section id="contact" className="section max-w-full overflow-hidden">
+      <div className="container grid min-w-0 gap-10 md:grid-cols-[.9fr_1.1fr]">
+        <div className="min-w-0 reveal">
           <p className="eyebrow">{site.form.eyebrow}</p>
           <h2 className="section-title">{site.form.title}</h2>
           <p className="section-lead">{site.form.lead}</p>
         </div>
         {submitted ? (
-          <div className="card grid gap-4 p-5 md:p-8">
+          <div className="card grid min-w-0 gap-4 p-4 md:p-8">
             <p className="text-lg font-black text-[var(--color-primary)]">送信が完了しました。</p>
             <p className="text-[var(--color-muted)]">お問い合わせいただきありがとうございます。内容を確認の上、ご連絡いたします。</p>
           </div>
         ) : (
-          <form className="card reveal grid gap-4 p-5 md:p-8" onSubmit={handleSubmit}>
+          <form className="card reveal grid min-w-0 gap-4 p-4 md:p-8" onSubmit={handleSubmit}>
             {/* Formspreeの送信先はsrc/content/site.tsのform.actionで切り替えます。 */}
             <label className="grid gap-2 font-bold">
               お名前
