@@ -25,21 +25,21 @@ export function ContactForm() {
             <p className="text-[var(--color-muted)]">お問い合わせいただきありがとうございます。内容を確認の上、ご連絡いたします。</p>
           </div>
         ) : (
-          <form className="card reveal grid min-w-0 gap-4 p-4 md:p-8" onSubmit={handleSubmit}>
+          <form className="card reveal grid w-full min-w-0 max-w-full gap-4 overflow-hidden p-4 md:p-8" onSubmit={handleSubmit}>
             {/* Formspreeの送信先はsrc/content/site.tsのform.actionで切り替えます。 */}
-            <label className="grid gap-2 font-bold">
+            <label className="grid min-w-0 gap-2 font-bold">
               お名前
-              <input className="rounded-[8px] border border-[var(--color-line)] bg-white px-4 py-3 font-normal outline-none focus:border-[var(--color-primary)]" name="name" autoComplete="name" required />
+              <input className="w-full min-w-0 max-w-full appearance-none rounded-[8px] border border-[var(--color-line)] bg-white px-4 py-3 font-normal outline-none focus:border-[var(--color-primary)]" name="name" autoComplete="name" required />
             </label>
-            <label className="grid gap-2 font-bold">
+            <label className="grid min-w-0 gap-2 font-bold">
               メールアドレス
-              <input className="rounded-[8px] border border-[var(--color-line)] bg-white px-4 py-3 font-normal outline-none focus:border-[var(--color-primary)]" type="email" name="email" autoComplete="email" required />
+              <input className="w-full min-w-0 max-w-full appearance-none rounded-[8px] border border-[var(--color-line)] bg-white px-4 py-3 font-normal outline-none focus:border-[var(--color-primary)]" type="email" name="email" autoComplete="email" required />
             </label>
-            <label className="grid gap-2 font-bold">
+            <label className="grid min-w-0 gap-2 font-bold">
               ご相談内容
-              <textarea className="min-h-36 resize-none appearance-none rounded-[8px] border border-[var(--color-line)] bg-white px-4 py-3 font-normal outline-none focus:border-[var(--color-primary)]" name="message" autoComplete="off" autoCorrect="off" spellCheck={false} required />
+              <textarea className="min-h-36 w-full min-w-0 max-w-full resize-none appearance-none rounded-[8px] border border-[var(--color-line)] bg-white px-4 py-3 font-normal outline-none focus:border-[var(--color-primary)]" name="message" autoComplete="off" autoCorrect="off" spellCheck={false} required />
             </label>
-            <button className="btn btn-primary mt-2" type="submit" aria-label={`${site.cta.label}ために送信`}>
+            <button className="btn btn-primary mt-2 max-w-full" type="submit" aria-label={`${site.cta.label}ために送信`}>
               {site.cta.label}
             </button>
           </form>
