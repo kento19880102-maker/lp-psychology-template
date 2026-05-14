@@ -37,7 +37,7 @@ export function ContactForm() {
             </label>
             <label className="grid gap-2 font-bold">
               ご相談内容
-              <textarea className="min-h-36 rounded-[8px] border border-[var(--color-line)] bg-white px-4 py-3 font-normal outline-none focus:border-[var(--color-primary)]" name="message" required />
+              <textarea className="min-h-36 resize-none appearance-none rounded-[8px] border border-[var(--color-line)] bg-white px-4 py-3 font-normal outline-none focus:border-[var(--color-primary)]" name="message" autoComplete="off" autoCorrect="off" spellCheck={false} required />
             </label>
             <button className="btn btn-primary mt-2" type="submit" aria-label={`${site.cta.label}ために送信`}>
               {site.cta.label}
